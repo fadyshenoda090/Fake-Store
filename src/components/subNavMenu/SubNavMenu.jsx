@@ -16,7 +16,7 @@ const SubNavMenu = () => {
             <ul className={`text-lg list-unstyled flex-col ${language == 'en' ? '' : ''}`}>
                 <NavLink className={({ isActive }) => (isActive) ? 'text-orange-500 acctive ' : 'dark:text-white text-black'} to='/cart'>
                     <li onClick={() => dispatch(toggler(!isMenuHidden))} className='my-5 border-b flex justify-center'>
-                        Cart &nbsp;<IoMdCart className='text-3xl relative' />
+                    {language == 'en' ? localization.cart.en : localization.cart.ar} &nbsp;<IoMdCart className='text-3xl relative' />
                         <span className="absolute rounded-full bg-amber-400 bottom-5 left-20 px-2 text-sm font-medium text-black">
                             <p className='mt-1'>{counter}</p>
                         </span>

@@ -1,5 +1,6 @@
 li{
     text-transform: capitalize;
+    letter-spacing: 0.059rem;
     /* color: #FA615B; */
     cursor: pointer;
     position: relative;
@@ -20,25 +21,17 @@ li{
     left: 0;
     width: 0;
     height: 2px;
-    background-color: #FA7949;
+    background-color: #ffd900;
     transition: width 0.4s ease-in-out;
 }
 .li:hover::before {
     width: 100%;
 }
 .acctive{
-    color: #FA7949 !important;
-    font-size: 20px;
-    border-bottom: .2px solid #FA7949;
-}
-.acctive2{
-    color: #FA7949 !important;
-    font-size: 20px;
-    border-bottom: .2px solid #000000;
+    color: #ffd900 !important;
+    font-size: 1.5rem;
+    border-bottom: .2px solid #ffd900;
 }
 .acctive:hover{
     border: none;
-}
-.bg-badge{
-    background-color: #FA7949;
 }

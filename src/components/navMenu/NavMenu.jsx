@@ -5,12 +5,14 @@ import { NavLink } from 'react-router-dom'
 import { IoMdCart } from 'react-icons/io'
 import { toggler } from '../../store/slices/subMenuToggle'
 import { useSelector } from 'react-redux'
+import { themeContext } from '../../contexts/ThemeContext'
 
 const NavMenu = () => {
     const { language, setLanguage } = useContext(languageContext)
+    const { theme, setTheme } = useContext(themeContext)
     const counter = useSelector((state) => state.cartCounter.counter)
     return (
-        <div className='w-full hidden md:block'>
+        <div className={`'w-full hidden md:block sticky top-[3.99rem] z-20 ${theme == 'dark' ? 'bg-[#403546]':'bg-gradient-to-tr from-neutral-300 to-neutral-100'}`}>
             <ul className={`text-lg list-unstyled flex gap-8 h-[3rem] items-center justify-center ${language == 'en' ? '' : 'flex flex-row-reverse'}`}>
                 <NavLink className={({ isActive }) => (isActive) ? 'text-orange-500 acctive ' : 'dark:text-white text-black'} to='/'>
                     <li className='li'>{language == 'en' ? localization.home.en : localization.home.ar}</li>
@@ -23,8 +25,8 @@ const NavMenu = () => {
                 </NavLink>
                 <NavLink className={({ isActive }) => (isActive) ? 'text-orange-500 acctive ' : 'dark:text-white text-black'} to='/cart'>
                     <li className='flex justify-center items-center li'>
-                        Cart &nbsp;<IoMdCart className='text-3xl relative' />
-                        <span className="absolute rounded-full bg-amber-400 bottom-4 left-16 px-2 text-sm font-medium text-black">
+                        {language=='en' ? localization.cart.en:localization.cart.ar} &nbsp;<IoMdCart className='text-3xl relative' />
+                        <span className={`absolute rounded-full bg-[#f0ec8b] ${language=='en'?'bottom-[0.9rem] left-16':'bottom-[0.9rem] left-[4.5rem]'} px-2 text-sm font-medium text-black`}>
                             <p className='mt-1'>{counter}</p>
                         </span>
                     </li>

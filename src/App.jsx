@@ -44,7 +44,7 @@ function App() {
     <>
       <LanguageProvider value={{ language, setLanguage }}>
         <ThemeProvider value={{ theme, setTheme }}>
-          <section className={`${theme} ${theme == 'dark' ? 'bg-slate-900' : ''} min-h-[100vh]`}>
+          <section className={`${theme} ${theme == 'dark' ? 'bg-[#2b272f]' : ''} min-h-[100vh]`}>
             <Provider store={store}>
               <RouterProvider router={router} />
             </Provider>
